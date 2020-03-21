@@ -5,14 +5,14 @@ class Button {
     this.$ = document.createElement("button");
     this.$.innerText = name;
   }
-
-  render(at) {
-    at.appendChild(this.$);
+  renderAt(element) {
+    element.appendChild(this.$);
   }
-
   onClick(handle) {
-    console.clear();
-    this.$.addEventListener("click", handle);
+    this.$.addEventListener("click", () => {
+      console.clear();
+      handle();
+    });
   }
 }
 
@@ -25,5 +25,5 @@ const buttons = Object.entries(commonPatterns).map(
 );
 
 buttons.forEach(button =>
-  button.render(document.getElementById("common-patters-buttons"))
+  button.renderAt(document.getElementById("common-patters-buttons"))
 );

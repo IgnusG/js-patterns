@@ -1,4 +1,4 @@
-function immediateObjects() {
+function immediateObject() {
   /* Immediate Object Initialization */
   console.warn("Immediate Object Initialization");
 
@@ -22,4 +22,4 @@ function immediateObjects() {
   }.init());
 }
 
-export { immediateObjects };
+export { immediateObject };
